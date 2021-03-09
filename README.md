@@ -41,6 +41,7 @@ int main(void) {
 ## Development
 
 * Write tests
+* Implement a free function
 
 ## Contributing
 
