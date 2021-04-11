@@ -40,8 +40,8 @@ int main(void) {
 
 ## Development
 
+* Delete memory when removing an element
 * Write tests
-* Implement a free function
 
 ## Contributing
 

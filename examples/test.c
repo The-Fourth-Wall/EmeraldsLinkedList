@@ -35,5 +35,9 @@ int main(void) {
     lsum = (long)linked_list_reduce(positive_double_list, (linked_list_lambda)adder);
     printf("LL SUM: `%ld` should be `30`\n", lsum);
 
+    linked_list_free(llist);
+    linked_list_free(double_list);
+    linked_list_free(positive_double_list);
+
     return 0;
 }

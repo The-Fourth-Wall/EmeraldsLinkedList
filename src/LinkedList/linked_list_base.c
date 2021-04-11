@@ -30,6 +30,7 @@ void linked_list_add(linked_list *list, void *item) {
     list->length++;
 }
 
+/* TODO -> FIX MEMORY WHEN REMOVING */
 void linked_list_remove(linked_list *list, void *item) {
     struct llnode **probe = NULL;
 
@@ -41,4 +42,22 @@ void linked_list_remove(linked_list *list, void *item) {
         probe = (struct llnode**)&(*probe)->next;
 
     *probe = (struct llnode*)((*probe)->next);
+}
+
+void linked_list_free(linked_list *list) {
+    struct llnode **probe = NULL;
+    struct llnode *next = NULL;
+
+    if(list == NULL) return;
+
+    probe = &(list->head);
+
+    while(*probe) {
+        next = (*probe)->next;
+        free(*probe);
+        *probe = next;
+    }
+
+    list->head = NULL;
+    list->length = 0;
 }
