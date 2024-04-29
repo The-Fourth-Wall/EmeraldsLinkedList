@@ -1,7 +1,7 @@
 #ifndef __LINKED_LIST_DUP_H_
 #define __LINKED_LIST_DUP_H_
 
-#include "linked_list_base.h"
+#include "../linked_list_base/linked_list_base.h"
 
 /**
  * @func: linked_list_dup

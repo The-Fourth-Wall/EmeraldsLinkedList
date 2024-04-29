@@ -10,8 +10,8 @@
  * @param next -> The next node on the linked list
  **/
 struct llnode {
-    void *item;
-    struct llnode *next;
+  void *item;
+  struct llnode *next;
 };
 
 /**
@@ -21,8 +21,8 @@ struct llnode {
  * @param head -> The head node of the list
  **/
 typedef struct linked_list {
-	size_t length;
-    struct llnode *head;
+  size_t length;
+  struct llnode *head;
 } linked_list;
 
 /**

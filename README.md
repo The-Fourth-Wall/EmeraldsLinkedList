@@ -4,7 +4,7 @@ A linked list implementation using the pointer to pointer method.
 
 # Installation
 
-* Install the library
+- Install the library
 
 `em list`
 `em install`
@@ -12,36 +12,37 @@ A linked list implementation using the pointer to pointer method.
 
 ## Usage
 
-* Include in a file
+- Include in a file
 
 `touch test.c`
+
 ```c
 #include "export/Vector.h"
 static void *print_ints(void *item) {
-    printf("%ld\n", (long)item);
-    return item;
+  printf("%ld\n", (long)item);
+  return item;
 }
 
 int main(void) {
-    /* Create a new linked list object */
-    linked_list *l = linked_list_new();
+  /* Create a new linked list object */
+  linked_list *l = linked_list_new();
 
-    /* Add a void* value into the list */
-    linked_list_add(l, (void*)1);
-    linked_list_add(l, (void*)2);
+  /* Add a void* value into the list */
+  linked_list_add(l, (void*)1);
+  linked_list_add(l, (void*)2);
 
-    linked_list_map(l, (linked_list_lambda)print_ints);
+  linked_list_map(l, (linked_list_lambda)print_ints);
 }
 ```
 
-* Compile
+- Compile
 
 `clang test.c export/*.o $(find ./libs -name "*.*o" | xargs ls -d)`
 
 ## Development
 
-* Delete memory when removing an element
-* Write tests
+- Delete memory when removing an element
+- Write tests
 
 ## Contributing
 
