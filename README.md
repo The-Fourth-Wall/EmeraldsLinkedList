@@ -17,21 +17,18 @@ A linked list implementation using the pointer to pointer method.
 `touch test.c`
 
 ```c
-#include "export/Vector.h"
-static void *print_ints(void *item) {
-  printf("%ld\n", (long)item);
-  return item;
-}
+#include "EmeraldsLinkedList.h"
 
 int main(void) {
   /* Create a new linked list object */
-  linked_list *l = linked_list_new();
+  EmeraldsLinkedList *l = linked_list_new();
 
   /* Add a void* value into the list */
   linked_list_add(l, (void*)1);
   linked_list_add(l, (void*)2);
 
-  linked_list_map(l, (linked_list_lambda)print_ints);
+  int v1 = linked_list_get(l, 0);
+  printf("%d\n", v1);
 }
 ```
 
