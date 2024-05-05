@@ -4,33 +4,33 @@
 #include <stdlib.h> /* malloc, calloc, realloc, free */
 
 /**
- * @struct: llnode
+ * @struct: EmeraldsLLNode
  * @desc: A linked list node with a typed object item
  * @param item -> The typed object contained in the linked list node
  * @param next -> The next node on the linked list
  **/
-struct llnode {
+struct EmeraldsLLNode {
   void *item;
-  struct llnode *next;
+  struct EmeraldsLLNode *next;
 };
 
 /**
- * @struct: linked_list
+ * @struct: EmeraldsLinkedList
  * @desc: A helper linked list helper struct containing the head node
  * @param length -> The number of elements in the linked list
  * @param head -> The head node of the list
  **/
-typedef struct linked_list {
+typedef struct EmeraldsLinkedList {
   size_t length;
-  struct llnode *head;
-} linked_list;
+  struct EmeraldsLLNode *head;
+} EmeraldsLinkedList;
 
 /**
  * @func: linked_list_new
  * @desc: Creates a new linked list instance and initiates the head node
  * @return The newly created typed linked list
  **/
-linked_list *linked_list_new(void);
+EmeraldsLinkedList *linked_list_new(void);
 
 /**
  * @func: linked_list_add
@@ -38,7 +38,7 @@ linked_list *linked_list_new(void);
  * @param list -> The list to append to
  * @param obj -> The node to append
  **/
-void linked_list_add(linked_list *list, void *obj);
+void linked_list_add(EmeraldsLinkedList *list, void *obj);
 
 /**
  * @func: linked_list_remove
@@ -46,13 +46,13 @@ void linked_list_add(linked_list *list, void *obj);
  * @param list -> The list to remove from
  * @param obj -> The node to remove
  **/
-void linked_list_remove(linked_list *list, void *obj);
+void linked_list_remove(EmeraldsLinkedList *list, void *obj);
 
 /**
  * @func: linked_list_free
  * @brief Frees the list structure
  * @param list -> The list to free
  */
-void linked_list_free(linked_list *list);
+void linked_list_free(EmeraldsLinkedList *list);
 
 #endif

@@ -4,7 +4,7 @@
 #include "../linked_list_base/linked_list_base.h"
 
 /**
- * @func: linked_list_lambda
+ * @func: EmeraldsLinkedListLambda
  * @desc: A generic function type used upon iterable data structures
  * @param -> An element belonging to an iterable
  * @return -> A value that satisfies the callee's purpose (map, filter, reduce)
@@ -13,8 +13,8 @@
  */
 /* Since this is completely generic we can't check for validity of arguments */
 /* The validity of the function is dependent on the callee */
-typedef void *(*linked_list_lambda1)(void *);
-typedef void *(*linked_list_lambda2)(void *, void *);
+typedef void *(*EmeraldsLinkedListLambda1)(void *);
+typedef void *(*EmeraldsLinkedListLambda2)(void *, void *);
 
 /**
  * @func: linked_list_map
@@ -24,7 +24,8 @@ typedef void *(*linked_list_lambda2)(void *, void *);
  * @param modifier -> The modifier function
  * @return The mapped linked list duplicate
  **/
-linked_list *linked_list_map(linked_list *list, linked_list_lambda1 modifier);
+EmeraldsLinkedList *
+linked_list_map(EmeraldsLinkedList *list, EmeraldsLinkedListLambda1 modifier);
 
 /**
  * @func: linked_list_filter
@@ -33,7 +34,8 @@ linked_list *linked_list_map(linked_list *list, linked_list_lambda1 modifier);
  * @param filter -> The filter functions
  * @return The filtered linked list duplicate
  **/
-linked_list *linked_list_filter(linked_list *list, linked_list_lambda1 filter);
+EmeraldsLinkedList *
+linked_list_filter(EmeraldsLinkedList *list, EmeraldsLinkedListLambda1 filter);
 
 /**
  * @func: linked_list_reduce
@@ -43,6 +45,7 @@ linked_list *linked_list_filter(linked_list *list, linked_list_lambda1 filter);
  * @param fold -> The fold function
  * @return The accumulated result
  **/
-void *linked_list_reduce(linked_list *list, linked_list_lambda2 fold);
+void *
+linked_list_reduce(EmeraldsLinkedList *list, EmeraldsLinkedListLambda2 fold);
 
 #endif

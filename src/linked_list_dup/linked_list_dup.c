@@ -1,8 +1,8 @@
 #include "linked_list_dup.h"
 
-linked_list *linked_list_dup(linked_list *list) {
-  struct llnode **probe = NULL;
-  linked_list *dup      = NULL;
+EmeraldsLinkedList *linked_list_dup(EmeraldsLinkedList *list) {
+  struct EmeraldsLLNode **probe = NULL;
+  EmeraldsLinkedList *dup       = NULL;
 
   if(list == NULL) {
     return NULL;
@@ -16,7 +16,7 @@ linked_list *linked_list_dup(linked_list *list) {
     linked_list_add(dup, (*probe)->item);
 
     /* Move to the next item */
-    probe = (struct llnode **)&(*probe)->next;
+    probe = (struct EmeraldsLLNode **)&(*probe)->next;
   }
 
   return dup;

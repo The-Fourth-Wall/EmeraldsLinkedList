@@ -9,6 +9,6 @@
  * @param list -> The linked list to duplicate
  * @return The duplicate
  **/
-linked_list *linked_list_dup(linked_list *list);
+EmeraldsLinkedList *linked_list_dup(EmeraldsLinkedList *list);
 
 #endif

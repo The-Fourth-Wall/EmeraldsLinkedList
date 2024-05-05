@@ -1,8 +1,9 @@
 #include "linked_list_functional_functions.h"
 
-linked_list *linked_list_map(linked_list *list, linked_list_lambda1 modifier) {
-  linked_list *dup      = NULL;
-  struct llnode **probe = NULL;
+EmeraldsLinkedList *
+linked_list_map(EmeraldsLinkedList *list, EmeraldsLinkedListLambda1 modifier) {
+  EmeraldsLinkedList *dup       = NULL;
+  struct EmeraldsLLNode **probe = NULL;
 
   if(list == NULL || modifier == NULL) {
     return NULL;
@@ -20,15 +21,16 @@ linked_list *linked_list_map(linked_list *list, linked_list_lambda1 modifier) {
     linked_list_add(dup, modifier(item));
 
     /* Point probe to the next node */
-    probe = (struct llnode **)&(*probe)->next;
+    probe = (struct EmeraldsLLNode **)&(*probe)->next;
   }
 
   return dup;
 }
 
-linked_list *linked_list_filter(linked_list *list, linked_list_lambda1 filter) {
-  linked_list *dup      = NULL;
-  struct llnode **probe = NULL;
+EmeraldsLinkedList *
+linked_list_filter(EmeraldsLinkedList *list, EmeraldsLinkedListLambda1 filter) {
+  EmeraldsLinkedList *dup       = NULL;
+  struct EmeraldsLLNode **probe = NULL;
 
   if(list == NULL || filter == NULL) {
     return NULL;
@@ -48,15 +50,16 @@ linked_list *linked_list_filter(linked_list *list, linked_list_lambda1 filter) {
     }
 
     /* Point probe to the next node */
-    probe = (struct llnode **)&(*probe)->next;
+    probe = (struct EmeraldsLLNode **)&(*probe)->next;
   }
 
   return dup;
 }
 
-void *linked_list_reduce(linked_list *list, linked_list_lambda2 fold) {
-  struct llnode **probe = NULL;
-  void *accumulator     = NULL;
+void *
+linked_list_reduce(EmeraldsLinkedList *list, EmeraldsLinkedListLambda2 fold) {
+  struct EmeraldsLLNode **probe = NULL;
+  void *accumulator             = NULL;
 
   if(list == NULL || fold == NULL) {
     return NULL;
@@ -70,12 +73,12 @@ void *linked_list_reduce(linked_list *list, linked_list_lambda2 fold) {
   accumulator = (*probe)->item;
 
   /* Start counting from the next */
-  probe = (struct llnode **)&(*probe)->next;
+  probe = (struct EmeraldsLLNode **)&(*probe)->next;
 
   while(*probe) {
     void *current = (*probe)->item;
     accumulator   = fold(accumulator, current);
-    probe         = (struct llnode **)&(*probe)->next;
+    probe         = (struct EmeraldsLLNode **)&(*probe)->next;
   }
 
   return accumulator;

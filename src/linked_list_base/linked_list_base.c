@@ -1,15 +1,16 @@
 #include "linked_list_base.h"
 
-linked_list *linked_list_new(void) {
-  linked_list *list = (linked_list *)malloc(sizeof(linked_list));
-  list->head        = NULL;
-  list->length      = 0;
+EmeraldsLinkedList *linked_list_new(void) {
+  EmeraldsLinkedList *list =
+    (EmeraldsLinkedList *)malloc(sizeof(EmeraldsLinkedList));
+  list->head   = NULL;
+  list->length = 0;
   return list;
 }
 
-void linked_list_add(linked_list *list, void *item) {
-  struct llnode **probe  = NULL;
-  struct llnode *newnode = NULL;
+void linked_list_add(EmeraldsLinkedList *list, void *item) {
+  struct EmeraldsLLNode **probe  = NULL;
+  struct EmeraldsLLNode *newnode = NULL;
 
   if(list == NULL || item == NULL) {
     return;
@@ -19,23 +20,23 @@ void linked_list_add(linked_list *list, void *item) {
   probe = &(list->head);
 
   /* Create a new node */
-  newnode       = (struct llnode *)malloc(sizeof(struct llnode));
+  newnode = (struct EmeraldsLLNode *)malloc(sizeof(struct EmeraldsLLNode));
   newnode->item = (void *)malloc(sizeof(item));
   newnode->item = item;
 
   /* Traverse to the end of the linked list */
   while(*probe) {
-    probe = (struct llnode **)&(*probe)->next;
+    probe = (struct EmeraldsLLNode **)&(*probe)->next;
   }
 
-  newnode->next = (struct llnode *)*probe;
+  newnode->next = (struct EmeraldsLLNode *)*probe;
   *probe        = newnode;
   list->length++;
 }
 
 /* TODO -> FIX MEMORY WHEN REMOVING */
-void linked_list_remove(linked_list *list, void *item) {
-  struct llnode **probe = NULL;
+void linked_list_remove(EmeraldsLinkedList *list, void *item) {
+  struct EmeraldsLLNode **probe = NULL;
 
   if(list == NULL || item == NULL) {
     return;
@@ -44,15 +45,15 @@ void linked_list_remove(linked_list *list, void *item) {
   probe = &(list->head);
 
   while((*probe) && (*probe)->item != list) {
-    probe = (struct llnode **)&(*probe)->next;
+    probe = (struct EmeraldsLLNode **)&(*probe)->next;
   }
 
-  *probe = (struct llnode *)((*probe)->next);
+  *probe = (struct EmeraldsLLNode *)((*probe)->next);
 }
 
-void linked_list_free(linked_list *list) {
-  struct llnode **probe = NULL;
-  struct llnode *next   = NULL;
+void linked_list_free(EmeraldsLinkedList *list) {
+  struct EmeraldsLLNode **probe = NULL;
+  struct EmeraldsLLNode *next   = NULL;
 
   if(list == NULL) {
     return;

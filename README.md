@@ -1,4 +1,4 @@
-# LinkedList
+# EmeraldsLinkedList
 
 A linked list implementation using the pointer to pointer method.
 
@@ -46,7 +46,7 @@ int main(void) {
 
 ## Contributing
 
-1. Fork it (<https://github.com/EmeraldsFramework/LinkedList/fork>)
+1. Fork it (<https://github.com/Oblivious-Oblivious/EmeraldsLinkedList/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
