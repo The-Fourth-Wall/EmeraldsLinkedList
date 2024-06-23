@@ -43,7 +43,7 @@ int main(void) {
 
 ## Contributing
 
-1. Fork it (<https://github.com/Oblivious-Oblivious/EmeraldsLinkedList/fork>)
+1. Fork it (<https://github.com/The-Fourth-Wall/EmeraldsLinkedList/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -51,4 +51,4 @@ int main(void) {
 
 ## Contributors
 
-- [Oblivious](https://github.com/Oblivious-Oblivious) - creator and maintainer
+- [oblivious](https://github.com/Oblivious-Oblivious) - creator and maintainer
